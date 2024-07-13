@@ -1,4 +1,4 @@
-import { AuthRepository } from "@/domain/auth/auth.repository";
+import { AuthRepository } from "@/domain/repository/auth/auth.repository";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, type UserCredential } from "firebase/auth";
 import { auth } from "@/config/firebase.config"
 

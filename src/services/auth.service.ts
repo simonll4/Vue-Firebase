@@ -1,6 +1,6 @@
 import { AuthModel } from "@/database/auth/auth.model"
 
-export class authService {
+export class AuthService {
 
   public static signInWithEmailAndPassword(email: string, password: string) {
     return new AuthModel().signInEmailAndPassword(email, password);
