@@ -1,17 +1,17 @@
-import './assets/main.css'
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './presentation/router';
 
-import { VueFire, VueFireAuth } from 'vuefire'
-import firebase from 'firebase/compat/app'
-import { firebaseApp } from './config/firebase.config'
+import { VueFire, VueFireAuth } from 'vuefire';
+import { firebaseApp } from './config/firebase.config';
+
+import './presentation/assets/main.css';
 
 const app = createApp(App)
 
-app.use(VueFire,{
+app.use(VueFire, {
   firebaseApp,
   modules: [
     VueFireAuth(),
