@@ -1,12 +1,27 @@
-import { AuthModel } from "@/database/auth/auth.model"
+import { AuthRepository } from "../domain/repository/auth/auth.repository";
 
 export class AuthService {
+  static signInWithEmailAndPassword(email: string, password: string): Promise<import("@firebase/auth").UserCredential> {
+    throw new Error("Method not implemented.");
+  }
+  constructor(private readonly authRepository: AuthRepository) {}
 
-  public static signInWithEmailAndPassword(email: string, password: string) {
-    return new AuthModel().signInEmailAndPassword(email, password);
+  public signInWithEmailAndPassword(email: string, password: string) {
+    return this.authRepository.signInEmailAndPassword(email, password);
   }
 
-  public static registerUserWithEmailAndPassword(email: string, password: string) {
-    return new AuthModel().registerUserWithEmailAndPassword(email, password);
+  public signInWithGoogle() {
+    //return this.authRepository.signInWithGoogle();
+  }
+
+  public registerUserWithEmailAndPassword(email: string, password: string) {
+    return this.authRepository.registerUserWithEmailAndPassword(
+      email,
+      password
+    );
+  }
+
+  public logout() {
+   // return this.authRepository.logout();
   }
 }

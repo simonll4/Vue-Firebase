@@ -1,24 +1,24 @@
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
+import { createApp } from "vue";
 
-import App from './App.vue';
-import router from './presentation/router';
+import { VueFire, VueFireAuth } from "vuefire";
+import { createPinia } from "pinia";
 
-import { VueFire, VueFireAuth } from 'vuefire';
-import { firebaseApp } from './config/firebase.config';
+import App from "./App.vue";
 
-import './presentation/assets/main.css';
+import router from "./presentation/router";
 
-const app = createApp(App)
+import { firebaseApp } from "./config/firebase.config";
+
+import "./presentation/assets/main.css";
+
+const app = createApp(App);
 
 app.use(VueFire, {
   firebaseApp,
-  modules: [
-    VueFireAuth(),
-  ]
-})
+  modules: [VueFireAuth()],
+});
 
-app.use(createPinia())
-app.use(router)
+app.use(createPinia());
+app.use(router);
 
-app.mount('#app')
+app.mount("#app");
