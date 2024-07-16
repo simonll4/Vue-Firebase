@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "firebase": "^10.12.3",
+    "luxon": "^3.4.4",
     "pinia": "^2.1.7",
+    "sweetalert2": "^11.12.2",
     "vue": "^3.4.31",
     "vue-router": "^4.3.3",
     "vuefire": "^3.1.23"

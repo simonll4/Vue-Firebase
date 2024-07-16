@@ -1,5 +1,5 @@
 <template>
-  <div class="my-2" v-for="publication in data.publications">
+  <div class="my-2" v-for="publication in data.publications" :key="publication.id">
     <div class="card card-compact w-auto bg-base-200 shadow-sm">
       <figure>
         <img :src="publication.img" class="h-72 w-full" :alt="publication.id" />

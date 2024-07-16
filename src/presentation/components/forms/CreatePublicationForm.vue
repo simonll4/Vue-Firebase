@@ -7,7 +7,7 @@
 
       <input @change="handleUploadImage" type="file" class="file-input file-input-bordered w-full my-2" />
 
-      <textarea class="textarea textarea-bordered h-24" placeholder="¿Que publicas?"
+      <textarea class="textarea textarea-bordered h-24" placeholder="¿Que publicas? minimo 10 caracteres"
         v-model="publicationForm.body"></textarea>
     </div>
 
@@ -19,7 +19,7 @@
 import { reactive } from "vue";
 import { useFirebaseAuth } from "vuefire";
 
-import { formatPublicationDataSourceAdapter } from "../../../adapters/datasources/formatPublicationDataSource";
+import { formatPublicationDataSourceAdapter } from "../../../adapters/datasources/format.publication.datasource";
 
 import { usePublications } from "../../stores/publications.store";
 

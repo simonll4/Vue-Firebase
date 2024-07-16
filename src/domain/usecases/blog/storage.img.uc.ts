@@ -1,5 +1,5 @@
-import { PublicationStorageService } from "@/services/publicationStorage.service";
-import { PublicationStorageModel } from "../../../database/blog/publicationStorage.model";
+import { PublicationStorageService } from "@/services/publication.storage.service";
+import { PublicationStorageModel } from "../../../database/blog/publication.storage.model";
 
 export class StorageImageUsecase {
   static execute(file: File) {

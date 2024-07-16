@@ -1,9 +1,7 @@
 <template>
   <AppLayout>
     <h1 class="text-center text-2xl font-bold">Welcome to Blog</h1>
-
     <CreatePublicationForm />
-
     <PublicationsList />
   </AppLayout>
 </template>
@@ -12,7 +10,7 @@
 import { onMounted } from "vue";
 
 // Components
-import AppLayout from "../../layouts/AppLayout.vue";
+import AppLayout from "@/presentation/layouts/AppLayout.vue";
 import CreatePublicationForm from "../../components/forms/CreatePublicationForm.vue";
 import PublicationsList from "../../components/publications/PublicationsList.vue";
 

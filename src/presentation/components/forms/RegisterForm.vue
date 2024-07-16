@@ -6,20 +6,32 @@
       <label class="label">
         <span class="label-text">Email</span>
       </label>
-      <input v-model="authForm.email" type="email" placeholder="example@example.com"
-        class="input input-bordered w-full max-w-xs" />
+      <input
+        v-model="authForm.email"
+        type="email"
+        placeholder="example@example.com"
+        class="input input-bordered w-full max-w-xs"
+      />
     </div>
     <div class="form-control w-full">
       <label class="label">
         <span class="label-text">Password</span>
       </label>
-      <input v-model="authForm.password" type="password" class="input input-bordered w-full max-w-xs" />
+      <input
+        v-model="authForm.password"
+        type="password"
+        class="input input-bordered w-full max-w-xs"
+      />
     </div>
     <div class="form-control w-full">
       <label class="label">
         <span class="label-text">Confirm Password</span>
       </label>
-      <input v-model="authForm.confirmPassword" type="password" class="input input-bordered w-full max-w-xs" />
+      <input
+        v-model="authForm.confirmPassword"
+        type="password"
+        class="input input-bordered w-full max-w-xs"
+      />
     </div>
 
     <button type="submit" class="btn btn-block mt-5 btn-accent">
@@ -31,7 +43,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 
-//import { useAuthStore } from "../../stores/auth.store";
+import { useAuthStore } from "../../stores/auth.store";
 import { useRouter } from "vue-router";
 
 const router = useRouter();

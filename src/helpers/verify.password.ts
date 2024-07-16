@@ -3,4 +3,4 @@ export const verifyPassword = (
   confirmationPassword: string
 ) => {
   return password === confirmationPassword;
-};
+}; 

@@ -1,29 +1,57 @@
 <template>
-  <div>
-    <h1 class="text-3xl">Login Form</h1>
-  </div>
+  <h1 class="text-3xl">Login</h1>
 
-  <form>
-    <label class="form-control w-full">
-      <div class="label">
+  <form @submit.prevent="login">
+    <div class="form-control w-full">
+      <label class="label">
         <span class="label-text">Email</span>
-        <span class="label-text-alt">Top Right label</span>
-      </div>
-      <input type="email" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-    </label>
-    <label class="form-control w-full">
-      <div class="label">
+      </label>
+      <input v-model="authForm.email" type="email" placeholder="example@example.com"
+        class="input input-bordered w-full max-w-xs" />
+    </div>
+    <div class="form-control w-full">
+      <label class="label">
         <span class="label-text">Password</span>
-        <span class="label-text-alt">Top Right label</span>
-      </div>
-      <input type="password " placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-    </label>
-    <button class="btn btn-block mt-5 btn-acent">Login</button>
-    <button class="btn btn-block mt-5 btn-error">Google</button>
+      </label>
+      <input v-model="authForm.password" type="password" class="input input-bordered w-full max-w-xs" />
+    </div>
 
+    <button type="submit" class="btn btn-block mt-5 btn-accent">Login</button>
+
+    <button @click="loginGoogle" type="button" class="btn btn-block mt-5 btn-error">
+      Login With Google
+    </button>
   </form>
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
 
+import { useAuthStore } from "../../stores/auth.store";
+
+const router = useRouter();
+
+const { loginWithEmailAndPassword, authForm, resetForm, loginWithGoogle } =
+  useAuthStore();
+
+const login = async () => {
+  const user = await loginWithEmailAndPassword();
+
+  if (user) {
+    return router.replace({ name: "blog" });
+  }
+};
+
+const loginGoogle = async () => {
+  // const user = await loginWithGoogle();
+
+  // if (user) {
+  //   return router.replace({ name: "blog" });
+  // }
+};
+
+onMounted(() => {
+  resetForm();
+});
 </script>

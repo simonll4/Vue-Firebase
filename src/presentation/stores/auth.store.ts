@@ -29,7 +29,8 @@ export const useAuthStore = defineStore("auth", () => {
         authForm.password
       );
 
-      if (!user) {
+      console.log(user);
+      if (user === null || user === undefined) {
         throw new Error("email or password incorrect");
       }
 
@@ -64,21 +65,21 @@ export const useAuthStore = defineStore("auth", () => {
       console.log(error);
       resetForm();
     }
-  };
+    };
 
-  const loginWithGoogle = async () => {
-    try {
-      const user = await LoginGoogleUseCase.execute();
+    const loginWithGoogle = async () => {
+      // try {
+      //   const user = await LoginGoogleUseCase.execute();
 
-      if (!user) {
-        throw new Error("User not found");
-      }
+    //   if (!user ) {
+    //     throw new Error("User not found");
+    //   }
 
-      return user;
-    } catch (error) {
-      console.log(error);
-      resetForm();
-    }
+    //   return user;
+    // } catch (error) {
+    //   console.log(error);
+    //   resetForm();
+    // }
   };
 
   const logout = () => {
