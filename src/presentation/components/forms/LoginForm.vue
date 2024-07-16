@@ -44,11 +44,11 @@ const login = async () => {
 };
 
 const loginGoogle = async () => {
-  // const user = await loginWithGoogle();
+  const user = await loginWithGoogle();
 
-  // if (user) {
-  //   return router.replace({ name: "blog" });
-  // }
+  if (user) {
+    return router.replace({ name: "blog" });
+  }
 };
 
 onMounted(() => {

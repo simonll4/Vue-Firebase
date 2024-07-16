@@ -65,21 +65,21 @@ export const useAuthStore = defineStore("auth", () => {
       console.log(error);
       resetForm();
     }
-    };
+  };
 
-    const loginWithGoogle = async () => {
-      // try {
-      //   const user = await LoginGoogleUseCase.execute();
+  const loginWithGoogle = async () => {
+    try {
+      const user = await LoginGoogleUseCase.execute();
 
-    //   if (!user ) {
-    //     throw new Error("User not found");
-    //   }
+      if (!user) {
+        throw new Error("User not found");
+      }
 
-    //   return user;
-    // } catch (error) {
-    //   console.log(error);
-    //   resetForm();
-    // }
+      return user;
+    } catch (error) {
+      console.log(error);
+      resetForm();
+    }
   };
 
   const logout = () => {

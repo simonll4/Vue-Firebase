@@ -19,6 +19,6 @@ export class AuthService {
   }
 
   public logout() {
-    return this.authRepository.logout;
+    return this.authRepository.logout ;
   }
 }
